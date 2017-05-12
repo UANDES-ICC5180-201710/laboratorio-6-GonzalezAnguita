@@ -1,4 +1,5 @@
 class GradesController < ApplicationController
+  before_action :authenticate_person!
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
   before_action :set_assignment
   before_action :set_course

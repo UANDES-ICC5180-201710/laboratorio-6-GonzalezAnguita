@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_person!
   before_action :set_course, only: [:show, :edit, :update, :destroy, :students]
 
   # GET /courses
@@ -79,6 +80,6 @@ class CoursesController < ApplicationController
         teacher = nil
       end
 
-      params.require(:course).permit(:title, :code, :quota).merge(:teacher => teacher)
+      params.require(:course).permit(:title, :code, :quota, :course_id).merge(:teacher => teacher)
     end
 end

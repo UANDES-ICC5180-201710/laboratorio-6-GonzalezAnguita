@@ -1,5 +1,3 @@
 <strong>
-  <%= link_to course, course %>:
+    <%= link_to course.to_s, courses_path(course_id: course.id) %>:
 </strong>
-<%= link_to 'Assignments', course_assignments_path(course_id: course.id) %>
-<%= link_to 'Students', students_course_path(id: course.id) %>

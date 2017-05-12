@@ -9,8 +9,8 @@
   </head>
 
   <body>
-    <%= link_to 'courses', courses_path %>
-    <%= link_to 'people', people_path %>
+    <%= render 'layouts/navbar', person_signed_in: person_signed_in?%>
+    <%= render 'layouts/alerts', notice: notice, alert: alert%>
     <% if @course %>
       <div>
         <%= render 'courses/navbar', course: @course %>
