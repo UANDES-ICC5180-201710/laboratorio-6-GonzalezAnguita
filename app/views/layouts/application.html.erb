@@ -11,11 +11,6 @@
   <body>
     <%= render 'layouts/navbar', person_signed_in: person_signed_in?%>
     <%= render 'layouts/alerts', notice: notice, alert: alert%>
-    <% if @course %>
-      <div>
-        <%= render 'courses/navbar', course: @course %>
-      </div>
-    <% end %>
     <%= yield %>
   </body>
 </html>
